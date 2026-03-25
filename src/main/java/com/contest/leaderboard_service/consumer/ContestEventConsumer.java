@@ -15,8 +15,8 @@ public class ContestEventConsumer {
     private final LeaderboardService leaderboardService;
 
     @KafkaListener(
-            topics  = "contest-events",
-            groupId = "leaderboard-service",
+            topics  = "contest-events-v2",
+            groupId = "leaderboard-service-v2",
             containerFactory = "contestKafkaListenerContainerFactory"
     )
     public void consume(ContestStartedEvent event) {

@@ -16,12 +16,18 @@ public class SubmissionResultConsumer {
 
     @KafkaListener(
             topics = "submission-result",
-            groupId = "leaderboard-service",
+            groupId = "leaderboard-service-v2",
             containerFactory = "submissionKafkaListenerContainerFactory"
     )
     public void consume(SubmissionResultEvent event) {
         log.info("Received submission result -> submissionId={} verdict={}",
                 event.getSubmissionId(), event.getVerdict());
-        leaderboardService.processResult(event);
+
+        try {
+            leaderboardService.processResult(event);
+        } catch (Exception e) {
+            // Catch the error so Kafka doesn't get stuck in an infinite retry loop!
+            log.error("Failed to process submission {}: {}", event.getSubmissionId(), e.getMessage());
+        }
     }
 }

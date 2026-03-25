@@ -35,8 +35,9 @@ public class LeaderboardService {
 
         ContestMeta meta = new ContestMeta();
         meta.setContestId(event.getContestId());
-        meta.setStartTime(event.getStartTime());
-        meta.setEndTime(event.getEndTime());
+        // Convert the LocalDateTime back to a UTC Instant for the database
+        meta.setStartTime(event.getStartTime().toInstant(java.time.ZoneOffset.UTC));
+        meta.setEndTime(event.getEndTime().toInstant(java.time.ZoneOffset.UTC));
         meta.setTitle(event.getTitle());
         contestMetaRepo.save(meta);
 
