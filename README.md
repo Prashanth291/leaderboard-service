@@ -32,7 +32,6 @@ The contest-manager platform is composed of five independent microservices:
 |---|---|---|
 | **Auth Service** | JWT-based authentication and user management | 8081 |
 | **Contest Service** | Contest and problem lifecycle management | 8082 |
-| **Submission Service** | Submission intake and queue management | 8083 |
 | **Execution Service** | Sandboxed code execution and verdict evaluation | 8084 |
 | **Leaderboard Service** | Real-time scoring, ranking, and WebSocket broadcast | 8085 |
 
@@ -434,9 +433,8 @@ leaderboard-service/
 
 | Service | Repository |
 |---|---|
-| Auth Service | [contest-manager/auth-service](https://github.com/contest-manager) |
-| Contest Service | [contest-manager/contest-service](https://github.com/contest-manager) |
-| Submission Service | [contest-manager/submission-service](https://github.com/contest-manager) |
+| Auth Service | [contest-manager/auth-service](https://github.com/Prashanth291/auth-service/) |
+| Contest Service | [contest-manager/contest-service](https://github.com/Prashanth291/contest-service) |
 | Execution Service | [contest-manager/execution-service](https://github.com/contest-manager) |
 
 ---
