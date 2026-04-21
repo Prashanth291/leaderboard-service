@@ -435,7 +435,7 @@ leaderboard-service/
 |---|---|
 | Auth Service | [contest-manager/auth-service](https://github.com/Prashanth291/auth-service/) |
 | Contest Service | [contest-manager/contest-service](https://github.com/Prashanth291/contest-service) |
-| Execution Service | [contest-manager/execution-service](https://github.com/contest-manager) |
+| Execution Service | [contest-manager/execution-service](https://github.com/klsharsha/execution-service) |
 
 ---
 
